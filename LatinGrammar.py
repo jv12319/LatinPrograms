@@ -71,8 +71,38 @@ while True:
     accuracy = (Num_of_correct / word_count) * 100
     print("Your accuracy is: "+f"{accuracy:.2f}"+ "%")
     print("Words you missed: " + str(words_missed))
-    end = input("Would you like to go again? Enter y or n " )
+    retry_errors_answer = input("Would you like to repeat the words you missed? Enter y or n " )
     Num_of_correct = 0
     Num_of_incorrect = 0
-    if end.lower() != "y":
-         break
+    if retry_errors_answer.lower() == "y":
+        while True:
+            for words in words_missed:
+                repeats_answer = input("Translate " + words + " ")
+
+                if repeats_answer in latin_words[words]:
+                    print("You are correct")
+                    Num_of_correct+=1
+                    print("Correct: " + str(Num_of_correct))
+                    print("Incorrect: " + str(Num_of_incorrect))
+                else:
+                    print("You are incorrect")
+                    Num_of_incorrect+=1
+                    print("Correct: " + str(Num_of_correct))
+                    print("Incorrect: " + str(Num_of_incorrect))
+                    if words in words_missed: 
+                        words_missed[words] = words_missed[words] + 1
+                    else:
+                        words_missed[words] = 1
+            
+            accuracy = (Num_of_correct / word_count) * 100
+            print("Your accuracy is: "+f"{accuracy:.2f}"+ "%")
+            print("Words you missed: " + str(words_missed))
+            retry_errors_answer = input("Would you like to repeat the words you missed? Enter y or n " )
+            Num_of_correct = 0
+            Num_of_incorrect = 0
+            if retry_errors_answer.lower() != "y":
+                print("Bye!")
+            break
+    else:
+        print("Bye!")
+        break
