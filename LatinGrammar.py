@@ -1,5 +1,6 @@
 import random
 
+#create dictionary for Latin adjectives
 latin_words = {
     "Unus":["one"],
     "nUllus":["none","no"],
@@ -12,9 +13,13 @@ latin_words = {
     "alter":["the other"]
 }
 
+#for calculating accuracy
 word_count = len(latin_words)
+
 Num_of_correct = 0
 Num_of_incorrect = 0
+
+#for repeat quiz
 words_missed = {}
 
 #randomize dictionary for iteration
@@ -22,6 +27,7 @@ list_of_lat_words = list(latin_words.items())
 random.shuffle(list_of_lat_words)
 randomized_lat_dic = dict(list_of_lat_words)
 
+#function to determine if user answer is right
 def check_adj_trans(answer, dictionary, word_to_be_checked):
     if answer in dictionary[word_to_be_checked]:
         return True
@@ -30,7 +36,8 @@ def check_adj_trans(answer, dictionary, word_to_be_checked):
     
 
 while True:
-    for words in randomized_lat_dic:
+    #iterates 9 times for each pair in dictionary
+    for words in randomized_lat_dic: 
         user_answer = input("Translate " + words +" ")
         status_of_user_answer =check_adj_trans(user_answer,randomized_lat_dic,words)
         if status_of_user_answer == True:
