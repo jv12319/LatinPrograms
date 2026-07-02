@@ -22,6 +22,8 @@ Num_of_incorrect = 0
 #for repeat quiz
 words_missed = {}
 
+words_missed_again = {}
+
 #randomize dictionary for iteration
 list_of_lat_words = list(latin_words.items())
 random.shuffle(list_of_lat_words)
@@ -34,60 +36,65 @@ def check_adj_trans(answer, dictionary, word_to_be_checked):
     else:
         return False
     
+#function to print score information
+def print_score_info(True_or_false, correct_count, incorrect_count):
+    if True_or_false == True:
+        print("You are correct")
+        print("Correct: " + str(correct_count))
+        print("Incorrect: " + str(incorrect_count))
+    else:
+        print("You are incorrect")
+        print("Correct: " + str(correct_count))
+        print("Incorrect: " + str(incorrect_count))
 
-while True:
-    #iterates 9 times for each pair in dictionary
-    for words in randomized_lat_dic: 
+def quiz_func(variable_dict, Num_of_correct, Num_of_incorrect,func_words_missed):
+    for words in variable_dict:
         user_answer = input("Translate " + words +" ")
-        status_of_user_answer =check_adj_trans(user_answer,randomized_lat_dic,words)
+        status_of_user_answer =check_adj_trans(user_answer,variable_dict,words)
         if status_of_user_answer == True:
-            print("You are correct")
             Num_of_correct+=1
-            print("Correct: " + str(Num_of_correct))
-            print("Incorrect: " + str(Num_of_incorrect))
+            print_score_info(status_of_user_answer, Num_of_correct, Num_of_incorrect)
         else:
-            print("You are incorrect")
             Num_of_incorrect+=1
-            print("Correct: " + str(Num_of_correct))
-            print("Incorrect: " + str(Num_of_incorrect))
-            words_missed[words] = randomized_lat_dic[words]
-        
+            print_score_info(status_of_user_answer, Num_of_correct, Num_of_incorrect)
+            func_words_missed[words] = variable_dict[words]
+    
     accuracy = (Num_of_correct / word_count) * 100
     print("Your accuracy is: "+f"{accuracy:.2f}"+ "%")
-    print("Words you missed: " + str(words_missed))
+    print("Words you missed: " + str(func_words_missed))
+    return func_words_missed
+    
+
+
+quiz = input("Do you want to start your quiz on special latin adjectives? Enter y or n: ")
+if quiz.lower() == "y":
+    quiz_func(randomized_lat_dic,Num_of_correct,Num_of_incorrect, words_missed )
     retry_errors_answer = input("Would you like to repeat the words you missed? Enter y or n " )
     Num_of_correct = 0
     Num_of_incorrect = 0
+    retry_word_count = len(words_missed)
     if retry_errors_answer.lower() == "y":
         while True:
-            for random_word in words_missed:
-                repeats_answer = input("Translate " + random_word + " ")
-
-                if repeats_answer in latin_words[random_word]:
-                    print("You are correct")
+            for retry_word in words_missed:
+                retry_answer = input("Translate " + retry_word + " ")
+                retry_status_of_user_answer =check_adj_trans(retry_answer,words_missed,retry_word)
+                if retry_status_of_user_answer == True:
                     Num_of_correct+=1
-                    print("Correct: " + str(Num_of_correct))
-                    print("Incorrect: " + str(Num_of_incorrect))
-                    #words_missed.pop(random_word)
+                    print_score_info(retry_status_of_user_answer,Num_of_correct,Num_of_incorrect)
                 else:
-                    print("You are incorrect")
                     Num_of_incorrect+=1
-                    print("Correct: " + str(Num_of_correct))
-                    print("Incorrect: " + str(Num_of_incorrect))
-                    if random_word in words_missed: 
-                        words_missed[random_word] = words_missed[random_word] + 1
-                    else:
-                        words_missed[random_word] = 1
+                    print_score_info(retry_status_of_user_answer,Num_of_correct,Num_of_incorrect)
+                    words_missed_again[retry_word] = words_missed[retry_word]
+                
+                
             
-            accuracy = (Num_of_correct / word_count) * 100
+            accuracy = (Num_of_correct / retry_word_count) * 100
             print("Your accuracy is: "+f"{accuracy:.2f}"+ "%")
-            print("Words you missed: " + str(words_missed))
-            retry_errors_answer = input("Would you like to repeat the words you missed? Enter y or n " )
+            print("Words you missed: " + str(words_missed_again))
             Num_of_correct = 0
             Num_of_incorrect = 0
-            if retry_errors_answer.lower() != "y":
-                print("Bye!")
             break
     else:
         print("Bye!")
-        break
+else:
+    print("Bye!")
