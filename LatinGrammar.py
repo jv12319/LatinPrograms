@@ -1,5 +1,5 @@
 import random
-
+test = "First Linux commit"
 #create dictionary for Latin adjectives
 latin_words = {
     "Unus":["one"],
@@ -74,3 +74,4 @@ if quiz.lower() == "y":
         print("0 words missed. Great job!")
 else:
     print("Bye!")
+#07/04/26 Made small move over to linux
