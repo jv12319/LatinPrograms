@@ -1,23 +1,3 @@
-import random
-test = "First Linux commit"
-#create dictionary for Latin adjectives
-latin_words = {
-    "Unus":["one"],
-    "nUllus":["none","no"],
-    "Ullus":["any"],
-    "sOlus":["only","alone"],
-    "neuter":["neither"],
-    "alius":["another", "other"],
-    "uter":["either"],
-    "tOtus":["entire", "whole"],
-    "alter":["the other"]
-}
-
-#randomize dictionary for iteration
-list_of_lat_words = list(latin_words.items())
-random.shuffle(list_of_lat_words)
-randomized_lat_dic = dict(list_of_lat_words)
-
 #function to determine if user answer is right
 def check_adj_trans(answer, dictionary, word_to_be_checked):
     if answer in dictionary[word_to_be_checked]:
@@ -59,19 +39,3 @@ def quiz_func(variable_dict):
         print("Your accuracy is: "+f"{accuracy:.2f}"+ "%")
         print("Words you missed: " + str(func_words_missed))
     return func_words_missed
-    
-
-quiz = input("Do you want to start your quiz on special latin adjectives? Enter y or n: ")
-if quiz.lower() == "y":
-    words_missed = quiz_func(randomized_lat_dic)
-    while len(words_missed) != 0:
-        retry_errors_answer = input("Would you like to repeat the words you missed? Enter y or n " )
-        if retry_errors_answer.lower() == "y":
-            words_missed = quiz_func(words_missed)
-        else:
-            print("Bye!")
-    else:
-        print("0 words missed. Great job!")
-else:
-    print("Bye!")
-#07/04/26 Made small move over to linux
