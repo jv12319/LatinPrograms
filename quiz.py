@@ -39,3 +39,6 @@ def quiz_func(variable_dict):
         print("Your accuracy is: "+f"{accuracy:.2f}"+ "%")
         print("Words you missed: " + str(func_words_missed))
     return func_words_missed
+
+# def decl_func(variable_dict):
+#     for key in variable_dict
