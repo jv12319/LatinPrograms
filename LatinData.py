@@ -138,31 +138,3 @@ third_declension = {
         }
     }
 }
-
-
-# print(first_declension["Puella"]["singular"]["Genitive"])
-# print(second_declension["AmIcus"]["singular"]["Genitive"])
-# print(second_declension_neuter["Bellum"]["singular"]["Genitive"])
-# print(third_declension["REx"]["singular"]["Genitive"])
-# print(third_declension["VirtUs"]["singular"]["Genitive"])
-# print(third_declension["Corpus"]["singular"]["Genitive"])
-
-# def rec_loop_dict(dictionary):
-#     for k, v in dictionary.items():
-#         if isinstance(v, dict):
-#             rec_loop_dict(v)
-#         else:
-#             print(k, v)
-
-# rec_loop_dict(first_declension)
-
-for noun, forms in first_declension.items():
-    # print(f"Noun: {noun}")
-    for form, cases in forms.items():
-        # print(f"Form: {form}")
-        for case, answer in cases.items():
-            print(f"Noun: {noun}")
-            print(f"Form: {form}")
-            print(f"Case: {case}")
-            print(f"Answer: {answer}\n")
-            

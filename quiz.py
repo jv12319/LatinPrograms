@@ -1,3 +1,4 @@
+import LatinData as LD
 #function to determine if user answer is right
 def check_adj_trans(answer, dictionary, word_to_be_checked):
     if answer in dictionary[word_to_be_checked]:
@@ -40,5 +41,20 @@ def quiz_func(variable_dict):
         print("Words you missed: " + str(func_words_missed))
     return func_words_missed
 
-# def decl_func(variable_dict):
-#     for key in variable_dict
+def decl_func(variable_dict):
+    Num_of_correct=0
+    Num_of_incorrect=0
+    decl_words_missed = {}
+    for noun, forms in variable_dict.items():
+        for form, cases in forms.items():
+            for case, answer in cases.items():
+                user_answer = input(f"Decline {noun.lower()} in the {form} case {case.lower()} ")
+                if user_answer == answer:
+                    Num_of_correct+=1
+                    print(f"Eureka!\nCorrect: {Num_of_correct} Incorrect: {Num_of_incorrect}")
+                else:
+                    Num_of_incorrect+=1
+                    print(f"NOPE\nCorrect: {Num_of_correct} Incorrect: {Num_of_incorrect}")
+                    decl_words_missed[noun][form][case] = variable_dict[noun][form][case]
+    print(str(decl_words_missed))
+    return decl_words_missed
