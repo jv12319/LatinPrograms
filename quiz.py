@@ -55,6 +55,11 @@ def decl_func(variable_dict):
                 else:
                     Num_of_incorrect+=1
                     print(f"NOPE\nCorrect: {Num_of_correct} Incorrect: {Num_of_incorrect}")
-                    decl_words_missed[noun][form][case] = variable_dict[noun][form][case]
+                    if noun not in decl_words_missed:
+                        decl_words_missed[noun] = {}
+                        if form not in decl_words_missed[noun]:
+                            decl_words_missed[noun][form] = {}
+                            
+                    decl_words_missed[noun][form][case] = answer
     print(str(decl_words_missed))
     return decl_words_missed
