@@ -61,5 +61,5 @@ def decl_func(variable_dict):
                             decl_words_missed[noun][form] = {}
                             
                     decl_words_missed[noun][form][case] = answer
-    print(str(decl_words_missed))
+    print("Words you missed: " + str(decl_words_missed))
     return decl_words_missed

@@ -15,7 +15,7 @@ if int(which_quiz) == 1:
     else:
         print("0 words missed. Great job!")
 elif int(which_quiz) == 2:
-    which_dec = input(" 1 for First Declension \n 2 for Second Declension \n 2.5 for Second Declension Neuter \n 3 for Third Declension \n Enter Num Here->")
+    which_dec = input(" 1 for First Declension \n 2 for Second Declension \n 2.5 for Second Declension Neuter \n 3 for Third Declension \n Enter Num Here-> ")
     if float(which_dec) == 1:
          q.decl_func(L.first_declension)
     else:
