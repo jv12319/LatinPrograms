@@ -57,9 +57,25 @@ def decl_func(variable_dict):
                     print(f"NOPE\nCorrect: {Num_of_correct} Incorrect: {Num_of_incorrect}")
                     if noun not in decl_words_missed:
                         decl_words_missed[noun] = {}
-                        if form not in decl_words_missed[noun]:
-                            decl_words_missed[noun][form] = {}
-                            
-                    decl_words_missed[noun][form][case] = answer
-    print("Words you missed: " + str(decl_words_missed))
+                    if form not in decl_words_missed[noun]:
+                        decl_words_missed[noun][form] = {}
+                    if case not in decl_words_missed:
+                            decl_words_missed[noun][form][case] = answer
+    if len(decl_words_missed) == 0:
+        print("Great job no errors!")
+        return decl_words_missed
+    else:
+        accuracy = (Num_of_correct / (len(variable_dict[noun][form]) * 2))*100
+        print(f"Words you missed:  {decl_words_missed}\nAccuracy: {accuracy:.2f}%")
     return decl_words_missed
+
+#Function to carry out some of the main files logic with choosing quizes/retries
+def main_choice_retry_logic(var_func, variable_dict):
+    words_missed = decl_func(variable_dict)
+    while len(words_missed) != 0:
+        retry_errors_answer = input("Would you like to repeat the words you missed? Enter y or n " )
+        if retry_errors_answer.lower() == "y":
+            words_missed = decl_func(words_missed)
+        else:
+            print("Bye!")
+            break
