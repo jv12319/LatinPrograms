@@ -79,3 +79,6 @@ def main_choice_retry_logic(var_func, variable_dict):
         else:
             print("Bye!")
             break
+
+def conj_func(variable_dict):
+    

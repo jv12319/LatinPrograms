@@ -35,6 +35,10 @@ elif int(which_quiz) == 2:
         elif which_gen == "n":
             neut = {"Corpus":L.third_declension["Corpus"]}
             q.main_choice_retry_logic(q.decl_func, neut)
+elif int(which_quiz) == 3:
+    which_conj = input("Which conjugation? 1 for 1st, 2 for 2nd, 3 for 3rd, 3.5 for 3rd io: ")
+    if float(which_conj) == 1:
+        
 else:
     print("Haven't started yet.")
 #07/04/26 Made small move over to linux
