@@ -25,7 +25,16 @@ elif int(which_quiz) == 2:
     elif float(which_dec) == 2.5:
         q.main_choice_retry_logic(q.decl_func,L.second_declension_neuter)
     elif float(which_dec) == 3:
-        q.main_choice_retry_logic(q.decl_func,L.third_declension)
+        which_gen = input("Which gender? m for masc, f for fem, n for neut: ")
+        if which_gen == "m":
+            masc = {"REx":L.third_declension["REx"]}
+            q.main_choice_retry_logic(q.decl_func,masc)
+        elif which_gen == "f":
+            fem = {"VirtUs":L.third_declension["VirtUs"]}
+            q.main_choice_retry_logic(q.decl_func, fem)
+        elif which_gen == "n":
+            neut = {"Corpus":L.third_declension["Corpus"]}
+            q.main_choice_retry_logic(q.decl_func, neut)
 else:
     print("Haven't started yet.")
 #07/04/26 Made small move over to linux

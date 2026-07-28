@@ -138,3 +138,26 @@ third_declension = {
         }
     }
 }
+
+#First Conjugation
+first_conjugation = {
+    "LaudAre" :{
+        "Present" :{
+            "1st pers sg":"laudO",
+            "2nd pers sg":"laudAs",
+            "3rd pers sg":"laudat",
+            "1st pers pl":"laudAmus",
+            "2nd pers pl":"laudAtis",
+            "3rd pers pl":"laudant",
+        },
+        "Imperfect" :{
+            "1st pers sg":"laudAbam",
+            "2nd pers sg":"laudAbAs",
+            "3rd pers sg":"laudAbat",
+            "1st pers pl":"laudAbAmus",
+            "2nd pers pl":"laudAbAtis",
+            "3rd pers pl":"laudAbant",
+        }
+    }
+}
+
