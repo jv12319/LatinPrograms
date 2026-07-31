@@ -140,24 +140,45 @@ third_declension = {
 }
 
 #First Conjugation
-first_conjugation = {
-    "LaudAre" :{
+# first_conjugation = {
+#     "LaudAre" :{
+#         "Present" :{
+#             "1st pers sg":"laudO",
+#             "2nd pers sg":"laudAs",
+#             "3rd pers sg":"laudat",
+#             "1st pers pl":"laudAmus",
+#             "2nd pers pl":"laudAtis",
+#             "3rd pers pl":"laudant",
+#         },
+#         "Imperfect" :{
+#             "1st pers sg":"laudAbam",
+#             "2nd pers sg":"laudAbAs",
+#             "3rd pers sg":"laudAbat",
+#             "1st pers pl":"laudAbAmus",
+#             "2nd pers pl":"laudAbAtis",
+#             "3rd pers pl":"laudAbant",
+#         }
+#     }
+# }
+
+#updated dicts for verbs and conjugations
+verbs = {"LaudAre" :{
+                "Principal Parts":["laudO", "laudAre", "laudAvI", "laudAtum"],
+                "Conjugation" :"1st",
+                "English Meaning" :["to praise", "to approve", "to extol"]
+}
+}
+
+conjugations = {"indicative active" :{
+    "1st" :{
         "Present" :{
-            "1st pers sg":"laudO",
-            "2nd pers sg":"laudAs",
-            "3rd pers sg":"laudat",
-            "1st pers pl":"laudAmus",
-            "2nd pers pl":"laudAtis",
-            "3rd pers pl":"laudant",
-        },
-        "Imperfect" :{
-            "1st pers sg":"laudAbam",
-            "2nd pers sg":"laudAbAs",
-            "3rd pers sg":"laudAbat",
-            "1st pers pl":"laudAbAmus",
-            "2nd pers pl":"laudAbAtis",
-            "3rd pers pl":"laudAbant",
+            "1st pers sg":"O",
+            "2nd pers sg":"As",
+            "3rd pers sg":"at",
+            "1st pers pl":"Amus",
+            "2nd pers pl":"Atis",
+            "3rd pers pl":"ant",
         }
     }
-}
+}}
 

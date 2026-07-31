@@ -38,7 +38,7 @@ elif int(which_quiz) == 2:
 elif int(which_quiz) == 3:
     which_conj = input("Which conjugation? 1 for 1st, 2 for 2nd, 3 for 3rd, 3.5 for 3rd io: ")
     if float(which_conj) == 1:
-        q.conj_func(L.first_conjugation)
+        #q.conj_func(L.first_conjugation)
 else:
     print("Haven't started yet.")
 #07/04/26 Made small move over to linux

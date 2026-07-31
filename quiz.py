@@ -80,12 +80,15 @@ def main_choice_retry_logic(var_func, variable_dict):
             print("Bye!")
             break
 
-def conj_func(variable_dict):
-    for noun, tenses in variable_dict.items():
-        for tense, conjugations in tenses.items():
-            for conjugation, answer in conjugations.items():
-                user_answer = input(f"Conjugate {noun} in the {tense} Tense {conjugation}: ")
-                if user_answer == answer:
-                    print("Correct!")
-                else:
-                    print("Wrong!")
+# def conj_func(variable_dict):
+#     for noun, tenses in variable_dict.items():
+#         for tense, conjugations in tenses.items():
+#             for conjugation, answer in conjugations.items():
+#                 user_answer = input(f"Conjugate {noun} in the {tense} Tense {conjugation}: ")
+#                 if user_answer == answer:
+#                     print("Correct!")
+#                 else:
+#                     print("Wrong!")
+
+def conj_func(verb_dict, conj_dict):
+    
