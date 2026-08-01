@@ -90,5 +90,9 @@ def main_choice_retry_logic(var_func, variable_dict):
 #                 else:
 #                     print("Wrong!")
 
-def conj_func(verb_dict, conj_dict):
-    
+def conj_func(verb_dict, conj_dict, which_conj):
+    tense = input(f"Which tense? 1 for Present \n2 for Imperfect \n3 for Future \n4 for Perfect \n5 for Pluperfect \n6 for Future Perfect")
+    if float(tense) == 1:
+        for verb, nested_dicts in verb_dict.items():
+            for nested_dict, imp_parts in nested_dicts.items():
+                print(f"{nested_dict} {imp_parts}")

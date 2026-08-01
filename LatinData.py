@@ -164,13 +164,13 @@ third_declension = {
 #updated dicts for verbs and conjugations
 verbs = {"LaudAre" :{
                 "Principal Parts":["laudO", "laudAre", "laudAvI", "laudAtum"],
-                "Conjugation" :"1st",
+                "Conjugation" :1,
                 "English Meaning" :["to praise", "to approve", "to extol"]
 }
 }
 
 conjugations = {"indicative active" :{
-    "1st" :{
+    1 :{
         "Present" :{
             "1st pers sg":"O",
             "2nd pers sg":"As",

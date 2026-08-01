@@ -38,7 +38,9 @@ elif int(which_quiz) == 2:
 elif int(which_quiz) == 3:
     which_conj = input("Which conjugation? 1 for 1st, 2 for 2nd, 3 for 3rd, 3.5 for 3rd io: ")
     if float(which_conj) == 1:
-        #q.conj_func(L.first_conjugation)
+        First_conj_verb = {"LaudAre":L.verbs["LaudAre"]}
+        First_conj_conj = {1:L.conjugations["indicative active"][1]}
+        q.conj_func(First_conj_verb, First_conj_conj, which_conj)
 else:
     print("Haven't started yet.")
 #07/04/26 Made small move over to linux
