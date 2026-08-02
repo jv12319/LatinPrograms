@@ -90,9 +90,15 @@ def main_choice_retry_logic(var_func, variable_dict):
 #                 else:
 #                     print("Wrong!")
 
-def conj_func(verb_dict, conj_dict, which_conj):
-    tense = input(f"Which tense? 1 for Present \n2 for Imperfect \n3 for Future \n4 for Perfect \n5 for Pluperfect \n6 for Future Perfect")
-    if float(tense) == 1:
-        for verb, nested_dicts in verb_dict.items():
-            for nested_dict, imp_parts in nested_dicts.items():
-                print(f"{nested_dict} {imp_parts}")
+def conj_func(which_indic_act_conj, which_tense):
+    for verb, attachable_info in LD.verbs.items():
+        if float(which_indic_act_conj) == LD.verbs[verb]["Conjugation"]:
+            verb_data = LD.verbs[verb]
+            verb_tense = LD.conjugations["indicative active"][float(which_tense)]
+            print(f"{LD.verbs[verb]["Principal Parts"][0]}\n{verb_data}\n{verb_tense}")
+        # for verb, nested_dicts in verb_dict.items():
+        #     for nested_dict, imp_parts in nested_dicts.items():
+        #         print(f"{nested_dict} {imp_parts}")
+        #         if float(which_conj) == 1:
+        #                 First_conj_verb = {"LaudAre":L.verbs["LaudAre"]}
+        #                 First_conj_conj = {1:L.conjugations["indicative active"][1]}

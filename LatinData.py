@@ -166,7 +166,11 @@ verbs = {"LaudAre" :{
                 "Principal Parts":["laudO", "laudAre", "laudAvI", "laudAtum"],
                 "Conjugation" :1,
                 "English Meaning" :["to praise", "to approve", "to extol"]
-}
+        },"MonEre" :{
+                "Principal Parts":["moneO", "monEre", "monuI", "monItum"],
+                "Conjugation" :2,
+                "English Meaning" :["to admonish", "to foretell", "to remind/advise/warn"]
+        }
 }
 
 conjugations = {"indicative active" :{
