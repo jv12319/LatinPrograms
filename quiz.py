@@ -94,8 +94,22 @@ def conj_func(which_indic_act_conj, which_tense):
     for verb, attachable_info in LD.verbs.items():
         if float(which_indic_act_conj) == LD.verbs[verb]["Conjugation"]:
             verb_data = LD.verbs[verb]
-            verb_tense = LD.conjugations["indicative active"][float(which_tense)]
-            print(f"{LD.verbs[verb]["Principal Parts"][0]}\n{verb_data}\n{verb_tense}")
+            verb_tense = LD.conjugations[float(which_indic_act_conj)][float(which_tense)]
+            first_principle_part = LD.verbs[verb]["Principal Parts"][0]
+            third_principle_part = LD.verbs[verb]["Principal Parts"][2]
+            stem_1st_prin_part = first_principle_part[:-1]
+            stem_3rd_prin_part = third_principle_part[:-1]
+            #print(f"{verb_tense}")
+            # print(f"{stem_3rd_prin_part} {third_principle_part}")
+            
+            for conjugations, endings in verb_tense.items():
+                quiz_conj = stem_1st_prin_part + endings
+                user_answer = input(f"Conjugate {first_principle_part} in the {conjugations}: ")
+                if user_answer == quiz_conj:
+                    print(f"Correct! {quiz_conj}")
+                else:
+                    print(f"Nope! {quiz_conj}")
+        
         # for verb, nested_dicts in verb_dict.items():
         #     for nested_dict, imp_parts in nested_dicts.items():
         #         print(f"{nested_dict} {imp_parts}")

@@ -173,16 +173,26 @@ verbs = {"LaudAre" :{
         }
 }
 
-conjugations = {"indicative active" :{
-    1 :{
-        "Present" :{
+conjugations = {
+    1 :{#laudAre
+        1 :{#Present
             "1st pers sg":"O",
             "2nd pers sg":"As",
             "3rd pers sg":"at",
             "1st pers pl":"Amus",
             "2nd pers pl":"Atis",
             "3rd pers pl":"ant",
+        }, 2 :{#Imperfect
+            "1st pers sg":"Abam",
+            "2nd pers sg":"AbAs",
+            "3rd pers sg":"Abat",
+            "1st pers pl":"AbAmus",
+            "2nd pers pl":"AbAtis",
+            "3rd pers pl":"Abant",
         }
+    },
+    2 :{#monEre
+    
     }
-}}
+}
 
