@@ -91,11 +91,26 @@ def main_choice_retry_logic(var_func, variable_dict):
 #                     print("Wrong!")
 
 def conj_func(which_indic_act_conj, which_tense):
+    num_of_correct = 0
+    num_of_incorrect = 0
     for verb, attachable_info in LD.verbs.items():
-        if float(which_indic_act_conj) == LD.verbs[verb]["Conjugation"]:
+        if int(which_indic_act_conj) == LD.verbs[verb]["Conjugation"]:
             verb_data = LD.verbs[verb]
-            verb_tense = LD.conjugations[float(which_indic_act_conj)][float(which_tense)]
+            verb_tense = LD.conjugations[int(which_indic_act_conj)][int(which_tense)]
+            if int(which_tense) == 1:
+                tense = "Present"
+            elif int(which_tense) == 2:
+                tense = "Imperfect"
+            elif int(which_tense) == 3:
+                tense = "Future"
+            elif int(which_tense) == 4:
+                tense = "Perfect"
+            elif int(which_tense) == 5:
+                tense = "Pluperfect"
+            elif int(which_tense) == 6:
+                tense = "Future Perfect"
             first_principle_part = LD.verbs[verb]["Principal Parts"][0]
+            second_principle_part = LD.verbs[verb]["Principal Parts"][1]
             third_principle_part = LD.verbs[verb]["Principal Parts"][2]
             stem_1st_prin_part = first_principle_part[:-1]
             stem_3rd_prin_part = third_principle_part[:-1]
@@ -104,11 +119,14 @@ def conj_func(which_indic_act_conj, which_tense):
             
             for conjugations, endings in verb_tense.items():
                 quiz_conj = stem_1st_prin_part + endings
-                user_answer = input(f"Conjugate {first_principle_part} in the {conjugations}: ")
+                user_answer = input(f"Conjugate {second_principle_part} in the {conjugations} {tense} tense: ")
                 if user_answer == quiz_conj:
-                    print(f"Correct! {quiz_conj}")
+                    num_of_correct += 1
+                    print(f"Correct! {quiz_conj}\nCorrect: {num_of_correct}\nIncorrect: {num_of_incorrect}")
+
                 else:
-                    print(f"Nope! {quiz_conj}")
+                    num_of_incorrect += 1
+                    print(f"Nope! {quiz_conj}\nCorrect: {num_of_correct}\nIncorrect: {num_of_incorrect}")
         
         # for verb, nested_dicts in verb_dict.items():
         #     for nested_dict, imp_parts in nested_dicts.items():

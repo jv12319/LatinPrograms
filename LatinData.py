@@ -172,7 +172,6 @@ verbs = {"LaudAre" :{
                 "English Meaning" :["to admonish", "to foretell", "to remind/advise/warn"]
         }
 }
-
 conjugations = {
     1 :{#laudAre
         1 :{#Present
@@ -192,7 +191,20 @@ conjugations = {
         }
     },
     2 :{#monEre
-    
+        1 :{#Present
+            "1st pers sg":"O",
+            "2nd pers sg":"Es",
+            "3rd pers sg":"et",
+            "1st pers pl":"Emus",
+            "2nd pers pl":"Etis",
+            "3rd pers pl":"ent",
+        }, 2 :{#Imperfect
+            "1st pers sg":"Ebam",
+            "2nd pers sg":"EbAs",
+            "3rd pers sg":"Ebat",
+            "1st pers pl":"EbAmus",
+            "2nd pers pl":"EbAtis",
+            "3rd pers pl":"Ebant",
+        }
     }
 }
-
